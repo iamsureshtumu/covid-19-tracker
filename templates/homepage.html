@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body id="bg" style="background-image: url('{% static 'images/bg1.jpg' %}'); background-size: cover; background-position: center; background-attachment: fixed;
+width='100%'">
+    <!-- Navigation -->
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+            <img src="{% static 'images/coronavirus.png' %}" width="50" height="50" class="img-thumbnail" alt="">
+        </a>
+        <a class="navbar-brand" href="{% url 'homepage' %}">Covid-19</a>
+        <a class="navbar-brand" href="{% url 'homepage' %}">Home </a>
+        <a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <!--
+                <li class="nav-item">
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'info/images/student.jpg' %}" width="50" height="50" class="img-thumbnail" alt="Profile" title="View details">
+                    </a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize">
+                        <img src="{% static 'images/student.jpg' %}" width="40" height="40" class="img-thumbnail" alt="Profile" title="View details"> {{ user_name }}</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal"> Logout</a> -->
+                    <a class="nav-link" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal"> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4">
+            <!-- <h1 class="display-3 text-capitalize">Welcome </h1> -->
+            <h1 class="display-3 text-capitalize">Welcome</h1>
+            <!-- <div class='jumbotron'>
+                <h1>Welcome To Library </h1>
+                {{user_name}} has loged in
+            </div> -->
+            <p>
+                <strong>{{user_name}} </strong>has loged in</p>
+        </header>
+
+
+        <br> {% block content %}
+
+        <!-- Example single danger button -->
+        <div class="row text-center">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card h-100">
+                    <img src="{% static 'images/IFC.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ctg1}} </h4>
+                        <p class="card-text">Text Area.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.mygov.in/covid-19/" class="btn btn-outline-success stretched-link">Click here>></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card h-100">
+                    <img src="{% static 'images/opengraph.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ctg2}} </h4>
+                        <p class="card-text">Text Area.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.covidvisualizer.com/" class="btn btn-outline-success stretched-link">Click here>></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">{{ctg3}} </h4>
+                        <p class="card-text">Text Area.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline-success stretched-link">click here>><span>({{ c3 }})</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">{{ctg4}} </h4>
+                        <p class="card-text">Text Area.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-outline-success stretched-link">click here>><span>({{ c4 }})</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+<!-- Footer -->
+<footer>
+    <div class="footer-copyright text-center py-3">© 2020 Developed by:
+        <a href="https://www.instagram.com/suresh_tumu/"> sureshtumu</a>
+    </div>
+</footer>
+</html>

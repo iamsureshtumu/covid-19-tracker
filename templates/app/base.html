@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body id="bg" style="background-image: url('{% static 'images/bg1.jpg' %}'); background-size: cover; background-position: center; background-attachment: fixed;
+width='100%'">
+    <!-- Navigation -->
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'images/virus.png' %}" width="50" height="50" class="img-thumbnail" alt="">
+        </a>
+        <a class="navbar-brand" href="#">Covid-19 </a>
+        <a class="navbar-brand" href="{% url 'index' %}">Home </a>
+        <a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize">
+                        <img src="{% static 'images/student.jpg' %}" width="40" height="40" class="img-thumbnail" alt="Profile" title="View details"> {{ user_name }}</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    {% block body_block %}
+    <div id="wrapper">
+
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="text-center h3">you have been logged out, Please Login!!
+                    <br>
+                    <br>
+                    <center>
+                        <a class="navbar-brand" href="#">
+                            <img src="{% static 'images/coronavirus.png' %}" width="300" height="300" class="img-thumbnail" alt="">
+                        </a>
+                    </center>
+                    <a class="btn btn-outline-success" href="{% url 'app:login' %}">login</a> |
+                    <a class="btn btn-outline-success" href="{% url 'app:register' %}">Signup</a>
+
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static '/info/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static '/info/bootstrap/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static '/info/bootstrap/js/sb-admin.min.js' %}"></script>
+
+</body>
+<!-- Footer --><br><br><br><br><br><br><br><br>
+<footer>
+    <div class="footer-copyright text-center py-3">© 2020 Developed by:
+        <a href="https://www.instagram.com/suresh_tumu/"> sureshtumu</a>
+    </div>
+</footer>
+{% endblock body_block %}
